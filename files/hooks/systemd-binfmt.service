@@ -1,0 +1,8 @@
+# SPDX-PackageSummary: finnix-live-build
+# SPDX-FileCopyrightText: Copyright (C) 2024 Ryan Finnie
+# SPDX-License-Identifier: MPL-2.0
+
+[Unit]
+# systemd-binfmt will freeze if running with strace attached to pid 1,
+# so disable when running "init.strace=1"
+ConditionKernelCommandLine=!init.strace=1
